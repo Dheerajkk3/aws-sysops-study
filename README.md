@@ -22,3 +22,11 @@ IBM DB2
 
 Aurora
 
+Advantages of RDS over a user provisioned DB on ec2:
+
+Automated provisioning
+
+OS Patching
+
+Automated backups and point in time restore of DB.
+
