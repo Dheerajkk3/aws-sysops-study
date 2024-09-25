@@ -7,7 +7,7 @@
 
 - Users use SQL as querying language because the data is inserted in tables.
 
-- The following are RDS Engines
+- The following are RDS DB Engines
 
   - Postgres
 
