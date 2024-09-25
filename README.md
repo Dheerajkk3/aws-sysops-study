@@ -1,7 +1,9 @@
 # aws-sysops-study
 
 ## RDS
-- RDS (Relational Database service) is a AWS service offering to create databases on cloud. 
+- RDS (Relational Database service) is a AWS service offering to create databases on cloud.
+
+- It has 6 engine types.  
 
 - It is manaaged DB service by AWS which means that users can't SSH to the DB servers.
 
