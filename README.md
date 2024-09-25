@@ -1,32 +1,31 @@
 # aws-sysops-study
 
 ## RDS
-RDS (Relational Database service) is a AWS service offering to create databases on cloud. 
+- RDS (Relational Database service) is a AWS service offering to create databases on cloud. 
 
-It is manaaged DB service by AWS which means that users can't SSH to the DB servers.
+- It is manaaged DB service by AWS which means that users can't SSH to the DB servers.
 
-Users use SQL as querying language.
+- Users use SQL as querying language because the data is inserted in tables.
 
-**RDS Engines:**
-Postgres
+- The following are RDS Engines
 
-MySQL
+  - Postgres
 
-MariaDB
+  - MySQL
 
-Oracle
+  - MariaDB
 
-MS SQL Server
+  - Oracle
 
-IBM DB2
+  - MS SQL Server
 
-Aurora
+  - IBM DB2
 
-Advantages of RDS over a user provisioned DB on ec2:
+  - Aurora
 
-Automated provisioning
+- Advantages of RDS over a user provisioned DB on ec2:
 
-OS Patching
+  - Automated provisioning , OS Patching
 
-Automated backups and point in time restore of DB.
+  - Automated backups and point in time restore of DB.
 
