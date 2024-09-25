@@ -37,6 +37,23 @@
 - It does asynchronous replication from main db which results in reads from DB are eventual consistent.
 - You can promote read replicas to serve as main db.
 - Read replicas  accept only SELECT queries but not UPDATE, INSERT, ALTER, DELETE
+- You can setup read replicas as MULTI AZ for disaster recovery purposes.
 
 *Multi AZ*
+- It is a standby DB created to perform synchronous replication in another AZ. The main goal of multi AZ is to increase availability.
+- It will maintain the same DNS record.
+- Synchronous replications means that as soon as a write operation happens to DB, it will replicate to that standby DB.
+- In case of failure to the main  db the failover automatically happens to the multi AZ instance automatically.
+- Conversion of single AZ to multi AZ will have zero downtown. It can be modified at any time.
+- Internally during that conversion:
+  - A snapshot of main db is created.
+  - New DB in another AZ has been created from the snapshot.
+  - Synchronization is enabled
+
+    | Read Replicas | Multi AZ |
+    |---------------| ---------|
+    | Asynchronous replication | Synchronous Replication|
+    | Performance Optimzation| Availability |
+    | Only reads from DB | Stand by DB until failover|
+    | It can be promoted to main DB | It can be failover to main DB during outages|
 
