@@ -26,10 +26,18 @@
   - Aurora
 
 - Advantages of RDS over a user provisioned DB on ec2:
-
   - Automated provisioning , OS Patching
-
   - Automated backups and point in time restore of DB.
+  - Monitoring Dashboards
+  - Read replicas and multi AZ features
+  - Maintenance windows for upgrades
+  - supports horizantal and vertical scaling.
+  - EBS backed storage and autosizing
+- When does storage auto scaling triggers?
+  - Storage is automatically updated when:
+    - Free storage is less than 10% of allocated storage
+    - low storage lasts for atleast 5 mins
+    - 6 hours has passed since last modification
  
 *Read Replicas*
 - These are used for read scalability.
