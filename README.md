@@ -28,4 +28,15 @@
   - Automated provisioning , OS Patching
 
   - Automated backups and point in time restore of DB.
+ 
+*Read Replicas*
+- These are used for read scalability.
+- You can  provision  a max of 15 read replicas for a  single RDS instance. They can be setup in same AZ, cross AZ, cross region.
+- There wont be pay for data transfer if read replicas are setup in same AZ.
+- Read Replicas that span across regions incurr charges.
+- It does asynchronous replication from main db which results in reads from DB are eventual consistent.
+- You can promote read replicas to serve as main db.
+- Read replicas  accept only SELECT queries but not UPDATE, INSERT, ALTER, DELETE
+
+*Multi AZ*
 
