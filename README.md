@@ -94,6 +94,14 @@
 - Important parameter groups:
   - Postgre/SQLServer: rds.force_ssl=1 to force ssl connections
   - MySQL/MariaDB: require_secure_transport=1 to force ssl connections
+*Snapshots vs Backups*
+| Backups | snapshots |
+|---------|-----------|
+| Backups are continuous and allow point in time recovery| It takes IO operations and can stop DB instance from seconds to minutes|
+| It will happen only in maintenance windows | Snapshots taken on multi AZ doesn't impact doesn't impact master - just the standby|
+| when you delete DB instance, you can retain automated backups | Snapshots are incremental after the first one (which is full)|
+| Retention period is 0 to 35 days| You can copy , share snapshots for eg, manual snapshots can be shared with other accounts directly. Automated snapshots can't be shared directly rather it has to be copied first and shared with other accounts next |
+| to disable backups, you set retention period to 0| You can take final snapshot before you delete DB instance and manual snapshots doesn't get expired|
    
 
   - Performance Insights is not supported for db.t2 type instance.
