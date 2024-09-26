@@ -67,3 +67,5 @@
     | Only reads from DB | Stand by DB until failover|
     | It can be promoted to main DB | It can be failover to main DB during outages|
 
+  - Performance Insights is not supported for db.t2 type instance.
+
