@@ -94,6 +94,7 @@
 - Important parameter groups:
   - Postgre/SQLServer: rds.force_ssl=1 to force ssl connections
   - MySQL/MariaDB: require_secure_transport=1 to force ssl connections
+    
 *Snapshots vs Backups*
 
 | Backups | snapshots |
