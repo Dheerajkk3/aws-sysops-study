@@ -86,6 +86,14 @@
   - RDS Proxy can be deployed in same AZ or different AZ of primary DB instance.
   - If RDS Proxy is deployed in private subnet then we need lamda functions to be deployed in private subnet.
   - If lamda function makes multiple connections to RDS proxy which can in turn make only 1 connection to primary DB instance. This is called as connection pooling.
+  - RDS Proxy supports IAM authentication, DB authentication, autoscaling.
+*Parameter Groups*
+- There are 2 Parameter groups: i. static ii. dynamic
+- Dynamic parameter groups are applied immediately
+- Static parameter groups are applied after instance reboot.
+- Important parameter groups:
+  - Postgre/SQLServer: rds.force_ssl=1 to force ssl connections
+  - MySQL/MariaDB: require_secure_transport=1 to force ssl connections
    
 
   - Performance Insights is not supported for db.t2 type instance.
