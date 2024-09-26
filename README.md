@@ -89,7 +89,7 @@
   - RDS Proxy supports IAM authentication, DB authentication, autoscaling.
 *Parameter Groups*
 - There are 2 Parameter groups: i. static ii. dynamic
-- Dynamic parameter groups are applied immediately
+- Dynamic parameter groups are applied immediately hence no reboot required.
 - Static parameter groups are applied after instance reboot.
 - Important parameter groups:
   - Postgre/SQLServer: rds.force_ssl=1 to force ssl connections
