@@ -67,5 +67,26 @@
     | Only reads from DB | Stand by DB until failover|
     | It can be promoted to main DB | It can be failover to main DB during outages|
 
+*Multi AZ fail over conditions:*
+- When Primary DB instance
+  - Failed
+  - OS of the instance is patching
+  - unreachable due to loss of network connectivity
+  - Modified ( eg instance type has been changed)
+  - Busy and unresponsive
+  - underlying storage is failed
+- If there is AZ outage
+- Manual failover of primary DB instance intiated by Reboot with failure.
+
+*RDS Proxy:*
+- Why do we need RDS Proxy?
+  - By default lamda functions are created in outside of our VPC, if lambda functions need to access RDS or elastic cache from private subnets then we need to create Lambda functions with VPC ID, Subnets and security groups. As a result lamda creates ENI in the same subnet. That way Lamda function will connect to RDS.
+  - The above design leaves the problem of allowing too many open connections to RDS DB instance.
+  - RDS Proxy takes care of cleaning up open connections and manages connection pools.
+  - RDS Proxy can be deployed in same AZ or different AZ of primary DB instance.
+  - If RDS Proxy is deployed in private subnet then we need lamda functions to be deployed in private subnet.
+  - If lamda function makes multiple connections to RDS proxy which can in turn make only 1 connection to primary DB instance. This is called as connection pooling.
+   
+
   - Performance Insights is not supported for db.t2 type instance.
 
