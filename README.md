@@ -126,4 +126,13 @@ RDS events keep track of events related:
   - By Users: Identifies which user is causing the load or problem.
   - DB Load : It is the number of active connections to DB.
   - Performance Insights is not supported for db.t2 type instance.
+ 
+## AURORA
+- AWS owned DB which means there is no opensource.
+- Both MySQL and Postgres DB are supported as Aurora DB.
+- It is very cloud optimized and claims 5X performance improvement over MySQL and 3X over Postgres.
+- Aurora storage automatically grows in increments of 10GB over 128TB
+- 20% more cost than RDS
+- Failover to Multi AZ is instantaneous.
+- Support 15 Read replicas.
 
