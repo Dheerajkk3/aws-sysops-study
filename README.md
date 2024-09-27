@@ -142,5 +142,7 @@ RDS events keep track of events related:
 - Cross Region replication is allowed.
 - Writer Endpoint: DNS entry that always points to master
 - Reader Endpoint: It helps with connection load balancing and connects to read replica. If a client connects to reader end point then it connects to one read replica.
-- Back tracking: Restore data at any point of time without backups.
+- Back tracking: Restore data at any point of time without backups upto 72 hrs. Supported only in MySQL only. It wont create a new DB if back tracked.
+- Automated backups: These are available with a retention of 1 - 35 days. Point in time restore to create a  new DB.
+- Aurora DB cloning. It will create a new DB by copying the data from original EBS volume. It uses copy-on write protocol. You can create a test DB with production data.
 
