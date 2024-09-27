@@ -134,5 +134,13 @@ RDS events keep track of events related:
 - Aurora storage automatically grows in increments of 10GB over 128TB
 - 20% more cost than RDS
 - Failover to Multi AZ is instantaneous (<30sec).
-- Support 15 Read replicas.
+- Support 15 Read replicas and they can have autoscaling too.
+- It always have 6 copies of data stored across 3 AZs.
+- for write 4 out of 6 copies is sufficient which means even if an AZ is lost the writes do happen.
+- for reads 3 out of 6 copies is sufficient.
+- Master and 15 Read replicas are present.
+- Cross Region replication is allowed.
+- Writer Endpoint: DNS entry that always points to master
+- Reader Endpoint: It helps with connection load balancing and connects to read replica. If a client connects to reader end point then it connects to one read replica.
+- Back tracking: Restore data at any point of time without backups.
 
