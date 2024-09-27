@@ -5,7 +5,7 @@
 
 - It has 6 engine types.  
 
-- It is manaaged DB service by AWS which means that users can't SSH to the DB servers.
+- It is manaaged DB service by AWS which means that users can't SSH to the DB servers unless you use custom RDS.
 
 - Users use SQL as querying language because the data is inserted in tables.
 
