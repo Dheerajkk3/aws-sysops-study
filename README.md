@@ -146,3 +146,9 @@ RDS events keep track of events related:
 - Automated backups: These are available with a retention of 1 - 35 days. Point in time restore to create a  new DB.
 - Aurora DB cloning. It will create a new DB by copying the data from original EBS volume. It uses copy-on write protocol. You can create a test DB with production data.
 
+## RDS and AURORA Security:
+- Data at rest encryption is possible due to KMS keys (must be enabled during launch time).
+- If master is unencrypted then read replicas are unencypted too.
+- to encrypt and unencrypted master, we need to snapshot it and then create with encryption.
+- With TLS in flight encryption is possible.
+
