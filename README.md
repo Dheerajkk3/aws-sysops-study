@@ -104,7 +104,23 @@
 | when you delete DB instance, you can retain automated backups | Snapshots are incremental after the first one (which is full)|
 | Retention period is 0 to 35 days| You can copy , share snapshots for eg, manual snapshots can be shared with other accounts directly. Automated snapshots can't be shared directly rather it has to be copied first and shared with other accounts next |
 | to disable backups, you set retention period to 0| You can take final snapshot before you delete DB instance and manual snapshots doesn't get expired |
-   
 
+RDS events keep track of events related:
+- DB instances
+- Parameter groups and Security Groups
+- Snapshots
+  
+*RDS Event Subscriptions*
+- subscribe to events to get notified by using SNS topics.
+- It needs event source (instances, SGs) and Event catageories (creation or failover).
+
+*Performance Insights*
+- Allows to visualize DB Performance and identify issues from troubleshooting.
+- Visualize DB load and filter that load by using:
+  - By  Waits: Identify which resource is under heavy load like CPU,
+  - Identifies which SQL statement is causing load
+  - By host : Identifies which host is causing the load on DB.
+  - By Users: Identifies which user is causing the load or problem.
+  - DB Load : It is the number of active connections to DB.
   - Performance Insights is not supported for db.t2 type instance.
 
