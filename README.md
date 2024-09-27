@@ -133,6 +133,6 @@ RDS events keep track of events related:
 - It is very cloud optimized and claims 5X performance improvement over MySQL and 3X over Postgres.
 - Aurora storage automatically grows in increments of 10GB over 128TB
 - 20% more cost than RDS
-- Failover to Multi AZ is instantaneous.
+- Failover to Multi AZ is instantaneous (<30sec).
 - Support 15 Read replicas.
 
