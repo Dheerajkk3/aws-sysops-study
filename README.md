@@ -109,6 +109,9 @@ RDS events keep track of events related:
 - DB instances
 - Parameter groups and Security Groups
 - Snapshots
+  - RDS events can trigger a SNS topic based on event.
+  - RDS events can push events to Eventbridge
+  - RDS logs can be pushed to cloud watch and you can 
   
 *RDS Event Subscriptions*
 - subscribe to events to get notified by using SNS topics.
