@@ -1,0 +1,3 @@
+- By default when you create a service of type load balancer in EKS, it will provision a classic load balancer.
+- When you install AWS Load balancer controller, that default has been changed to NLB.
+- For ingress, AWS Load balancer controller will create ALB.
