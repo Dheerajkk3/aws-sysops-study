@@ -21,7 +21,7 @@
 
   - MS SQL Server
 
-  - IBM DB2
+  - IBM DB2 (50000, 250000)
 
   - Aurora
 
