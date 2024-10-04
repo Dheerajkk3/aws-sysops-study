@@ -152,3 +152,19 @@ RDS events keep track of events related:
 - to encrypt and unencrypted master, we need to snapshot it and then create with encryption.
 - With TLS in flight encryption is possible.
 
+## AMAZON ELASTIC CACHE (REDIS and MEMCACHED)
+- Caches are in memory databases that produces high performance and low latency.'
+- Cache Hit: If an application query is found in Elastic cache, then it is treated as cache hit.
+- Cache Miss: If an application query is not found in Elastic cache, then the query reads from RDS and writes it to Redis.
+- It makes application stateless.
+
+# HOW?
+  Application writes session data to elastic cache, if a user hits/request another session, application will retrieve session from elastic cache.
+
+  | REDIS | MEMCACHED|
+  |-------|----------|
+  | Multi AZ and Read Replicas are supported | Multi Node sharding|
+  | Data Durability with AOF persistence | NO HA and NO Persistence|
+  | Backup and restore | No Backup and restore|
+  | Sets and Sorted Sets| Multi threaded architecture|
+
