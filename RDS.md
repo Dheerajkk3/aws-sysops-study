@@ -121,7 +121,7 @@ RDS events keep track of events related:
 - Allows to visualize DB Performance and identify issues from troubleshooting.
 - Visualize DB load and filter that load by using:
   - By  Waits: Identify which resource is under heavy load like CPU,
-  - Identifies which SQL statement is causing load
+  - By SQL Statements: Identifies which SQL statement is causing load
   - By host : Identifies which host is causing the load on DB.
   - By Users: Identifies which user is causing the load or problem.
   - DB Load : It is the number of active connections to DB.
