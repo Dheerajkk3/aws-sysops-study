@@ -11,13 +11,13 @@
 
 - The following are RDS DB Engines
 
-  - Postgres
+  - Postgres (5432)
 
-  - MySQL
+  - MySQL (3306)
 
-  - MariaDB
+  - MariaDB (3306)
 
-  - Oracle
+  - Oracle (1521)
 
   - MS SQL Server
 
@@ -161,7 +161,7 @@ RDS events keep track of events related:
 # HOW?
   Application writes session data to elastic cache, if a user hits/request another session, application will retrieve session from elastic cache.
 
-  | REDIS | MEMCACHED|
+  | REDIS (6379) | MEMCACHED(11211) |
   |-------|----------|
   | Multi AZ and Read Replicas are supported | Multi Node sharding|
   | Data Durability with AOF persistence | NO HA and NO Persistence|
