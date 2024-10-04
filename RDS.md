@@ -169,6 +169,7 @@ RDS events keep track of events related:
   | Sets and Sorted Sets| Multi threaded architecture|
 
   *Cluster Modes:*
+  
   Disabled:
   - one primary cache node, 0-5 read replicas. In case of failover one of these 5 can be primary cache node.
   - Asynchronous replication
@@ -178,6 +179,7 @@ RDS events keep track of events related:
     *Scaling*
     Horizantal: scale in/ out on  read replicas (0-5)
     vertical: scale in/ out to on node  groups results in DNS update.
+    
   Enabled:
    - Data is partioned across shards to make writes friendly. Auto scaling is supported on these shards (increase/decrease shards)
    - Auto scaling is enabled in Redis when cluster mode is enabled only.
