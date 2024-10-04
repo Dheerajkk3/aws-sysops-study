@@ -158,7 +158,7 @@ RDS events keep track of events related:
 - Cache Miss: If an application query is not found in Elastic cache, then the query reads from RDS and writes it to Redis.
 - It makes application stateless.
 
-# HOW?
+## HOW?
   Application writes session data to elastic cache, if a user hits/request another session, application will retrieve session from elastic cache.
 
   | REDIS (6379) | MEMCACHED(11211) |
@@ -167,4 +167,32 @@ RDS events keep track of events related:
   | Data Durability with AOF persistence | NO HA and NO Persistence|
   | Backup and restore | No Backup and restore|
   | Sets and Sorted Sets| Multi threaded architecture|
+
+  *Cluster Modes:*
+  Disabled:
+  - one primary cache node, 0-5 read replicas. In case of failover one of these 5 can be primary cache node.
+  - Asynchronous replication
+  - primary node is used for both read and write, others are read-only.
+  - one shard, all nodes have all data.
+  - Multi AZ enabled by default.
+    *Scaling*
+    Horizantal: scale in/ out on  read replicas (0-5)
+    vertical: scale in/ out to on node  groups results in DNS update.
+  Enabled:
+   - Data is partioned across shards to make writes friendly. Auto scaling is supported on these shards (increase/decrease shards)
+   - Auto scaling is enabled in Redis when cluster mode is enabled only.
+   - Supports upto 500 shards
+     - 500 shards with single master
+     - 250 shards with one master and one replica
+     - 83 shards with one master and 5 replicas.
+    
+     Redis connection endpoint:
+     - Standalone node will have only 1 endpoint for read/write
+     - cluster mode disabled:
+       - Primary endpoint : serves all write operations
+       - Reader endpoint: reads are split evenly across all read replicas.
+       - Node Endpoint: for all read
+     - cluster mode enabled:
+       - configuration endpoint: for all read / write endpoints.
+  
 
